@@ -9,7 +9,7 @@ import { WORKS_DATA, WorkProject, getWhatsAppLink } from '../siteConfig';
 import { X, ChevronLeft, ChevronRight, MapPin, Calendar, ZoomIn } from 'lucide-react';
 import { WhatsAppIcon } from './SocialIcons';
 
-const CATEGORIES = ['Todas', 'Residencial', 'Predial', 'Comercial', 'Pedras Naturais', 'Limpeza & Pós-Obra'] as const;
+const CATEGORIES = ['Todas', 'Residencial', 'Predial', 'Limpeza & Pós-Obra'] as const;
 type CategoryFilter = (typeof CATEGORIES)[number];
 
 const WorksGallery: React.FC = () => {

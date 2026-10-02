@@ -13,8 +13,7 @@ interface ThalesLogoProps {
 
 export const ThalesLogo: React.FC<ThalesLogoProps> = ({
   className = 'w-12 h-12',
-  variant = 'emblem',
-  showDetails = true,
+  showDetails = false,
 }) => {
   return (
     <svg

@@ -4,29 +4,42 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { SITE_CONFIG, getWhatsAppLink } from '../siteConfig';
+import { getWhatsAppLink } from '../siteConfig';
 import { WhatsAppIcon } from './SocialIcons';
 import CobaltoAvatar from './CobaltoAvatar';
 import {
   Send,
   X,
   ArrowUpRight,
-  Shield,
   User,
   Loader2,
   ChevronRight,
-  HelpCircle,
   Mic,
   MicOff,
   Volume2,
   VolumeX,
   Sparkles,
-  Camera,
-  Image as ImageIcon,
   Check,
   Paintbrush,
   Upload,
 } from 'lucide-react';
+
+// Web Speech API type declarations
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+}
+
+interface SpeechRecognitionInstance extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onerror: ((event: Event & { error?: string }) => void) | null;
+  onend: (() => void) | null;
+  start(): void;
+  stop(): void;
+  abort(): void;
+}
 
 interface ChatMessage {
   id: string;
@@ -41,22 +54,22 @@ const SIMULATION_SURFACES = [
   {
     id: 'fachada-externa',
     name: 'Fachada Residencial',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
+    image: '/obras/pintura-residencial-azul.jpg',
   },
   {
     id: 'sala-interna',
-    name: 'Interior & Sala',
-    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=800&auto=format&fit=crop',
+    name: 'Interior & Corredor',
+    image: '/obras/corredor-interno-acabamento.jpg',
   },
   {
-    id: 'pedras-muro',
-    name: 'Muro & Pedras Naturais',
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800&auto=format&fit=crop',
+    id: 'area-lazer',
+    name: 'Área de Lazer',
+    image: '/obras/area-lazer-deck-piscina.jpg',
   },
   {
     id: 'predial',
-    name: 'Fachada Predial',
-    image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=800&auto=format&fit=crop',
+    name: 'Hall Predial',
+    image: '/obras/hall-predial-limpeza.jpg',
   },
 ];
 
@@ -95,6 +108,7 @@ const FINISH_OPTIONS = [
 ];
 
 // Clean markdown asterisks and formatting artifacts for clean, readable text
+// Shared utility - also defined in api/_lib/cobalto.ts for server-side use
 const cleanAsterisks = (text: string): string => {
   if (!text) return '';
   return text
@@ -126,7 +140,7 @@ export const LateralAIAssistant: React.FC = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [autoSpeak, setAutoSpeak] = useState(false);
   const [speechSupported, setSpeechSupported] = useState(false);
-  const recognitionRef = useRef<any>(null);
+  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
 
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
@@ -151,25 +165,25 @@ export const LateralAIAssistant: React.FC = () => {
   // Check speech recognition support
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-      if (SpeechRecognition) {
+      const SpeechRecognitionCtor = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (SpeechRecognitionCtor) {
         setSpeechSupported(true);
-        const recognition = new SpeechRecognition();
+        const recognition: SpeechRecognitionInstance = new SpeechRecognitionCtor();
         recognition.continuous = false;
         recognition.interimResults = false;
         recognition.lang = 'pt-BR';
 
-        recognition.onresult = (event: any) => {
+        recognition.onresult = (event: SpeechRecognitionEvent) => {
           const transcript = event.results[0][0].transcript;
           setInput(transcript);
           setIsListening(false);
-          // auto-send
+          // Focus input so user can review before sending
           setTimeout(() => {
-            handleSendMessage(transcript);
-          }, 200);
+            inputRef.current?.focus();
+          }, 100);
         };
 
-        recognition.onerror = (event: any) => {
+        recognition.onerror = (event: Event & { error?: string }) => {
           console.warn('Speech recognition error:', event.error);
           setIsListening(false);
         };
@@ -559,6 +573,8 @@ export const LateralAIAssistant: React.FC = () => {
       {/* 2. Lateral Modal / Drawer */}
       {isOpen && (
         <aside
+          role="dialog"
+          aria-modal="true"
           aria-label="Cobalto - Agente de IA Especialista"
           className="fixed inset-y-0 right-0 z-50 w-full sm:w-[420px] md:w-[450px] bg-[#FAF8F5] border-l-2 border-[#1D2F29] shadow-2xl flex flex-col justify-between animate-in slide-in-from-right duration-200"
         >

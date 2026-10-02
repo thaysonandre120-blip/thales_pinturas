@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { X, ZoomIn, ZoomOut, RotateCcw, ExternalLink } from 'lucide-react';
+import { X, ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 import { getWhatsAppLink } from '../siteConfig';
 import { WhatsAppIcon } from './SocialIcons';
 

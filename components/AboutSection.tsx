@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { SITE_CONFIG, getWhatsAppLink } from '../siteConfig';
+import { getWhatsAppLink } from '../siteConfig';
 import { ShieldCheck, Ruler, Clock, Sparkles, ArrowUpRight } from 'lucide-react';
 
 const AboutSection: React.FC = () => {

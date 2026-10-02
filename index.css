@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background-color: #FAF8F5;
+  color: #1F2220;
+}
+
+/* Pure sharp-corner architectural discipline with exception for circular lens */
+*:not(.rounded-full) {
+  border-radius: 0 !important;
+}
+.rounded-full {
+  border-radius: 9999px !important;
+}
+
+::selection {
+  background-color: #1D2F29;
+  color: #FAF8F5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFEA;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5B9A5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1D2F29;
+}
+
+/* Hide scrollbar for quick chips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

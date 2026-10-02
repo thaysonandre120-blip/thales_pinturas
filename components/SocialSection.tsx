@@ -38,8 +38,6 @@ const SocialSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3.5 px-8 py-5 bg-[#FAF8F5] hover:bg-[#FFFFFF] text-[#14201C] text-xs font-bold tracking-widest uppercase transition-all shadow-xl group border border-[#FAF8F5]"
-              data-hover="true"
-              data-hover-text="Instagram"
             >
               <InstagramIcon size={24} className="group-hover:scale-110 transition-transform" />
               <span>Acessar Instagram {SITE_CONFIG.instagramHandle}</span>
@@ -53,8 +51,6 @@ const SocialSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3.5 px-8 py-5 bg-[#FAF8F5]/10 hover:bg-[#FAF8F5]/20 text-[#FAF8F5] text-xs font-bold tracking-widest uppercase transition-all border border-[#FAF8F5]/30 group"
-                data-hover="true"
-                data-hover-text="YouTube"
               >
                 <YouTubeIcon size={24} className="group-hover:scale-110 transition-transform" />
                 <span>Canal no YouTube</span>

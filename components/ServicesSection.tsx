@@ -50,30 +50,61 @@ const ServicesSection: React.FC = () => {
                 </div>
 
                 {/* Service Image (Colorida e Viva - Permite Zoom e Interação) */}
-                <div
-                  onClick={() =>
-                    openImageLightbox({
-                      src: service.image,
-                      alt: service.title,
-                      title: service.title,
-                      subtitle: service.subtitle,
-                    })
-                  }
-                  className="mb-4 relative overflow-hidden border border-[#DCD3C5] aspect-[16/10] cursor-pointer group/img"
-                  title="Clique para ver em alta resolução e dar zoom"
-                >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover filter saturate-[1.12] contrast-[1.05] group-hover/img:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="px-2.5 py-1 bg-[#14201C]/85 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
-                      <ZoomIn size={12} />
-                      <span>Ampliar</span>
-                    </span>
+                {/* Image Gallery */}
+                <div className="mb-4 space-y-2">
+                  <div
+                    onClick={() =>
+                      openImageLightbox({
+                        src: service.image,
+                        alt: service.title,
+                        title: service.title,
+                        subtitle: service.subtitle,
+                      })
+                    }
+                    className="relative overflow-hidden border border-[#DCD3C5] aspect-[16/10] cursor-pointer group/img"
+                    title="Clique para ver em alta resolução e dar zoom"
+                  >
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover filter saturate-[1.12] contrast-[1.05] group-hover/img:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="px-2.5 py-1 bg-[#14201C]/85 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1">
+                        <ZoomIn size={12} />
+                        <span>Ampliar</span>
+                      </span>
+                    </div>
                   </div>
+
+                  {service.complementaryImages && service.complementaryImages.length > 0 && (
+                    <div className="grid grid-cols-2 gap-2">
+                      {service.complementaryImages.map((img, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() =>
+                            openImageLightbox({
+                              src: img,
+                              alt: `${service.title} - Imagem Complementar ${idx + 1}`,
+                              title: `${service.title} - Detalhe`,
+                            })
+                          }
+                          className="relative overflow-hidden border border-[#DCD3C5] aspect-[16/10] cursor-pointer group/img"
+                        >
+                          <img
+                            src={img}
+                            alt="Complementary"
+                            className="w-full h-full object-cover filter saturate-[1.12] group-hover/img:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                            <ZoomIn size={12} className="text-white" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#14201C] mb-1">
@@ -97,6 +128,42 @@ const ServicesSection: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {/* Certification Badge */}
+                {service.certification && (
+                  <div className="mb-5 p-3 sm:p-4 border border-[#E2DDD5] bg-[#FFFFFF] flex items-start gap-3 sm:gap-4 group hover:border-[#DCD3C5] transition-colors">
+                    <div 
+                      className="shrink-0 w-12 h-16 sm:w-16 sm:h-20 border border-[#DCD3C5] cursor-pointer relative overflow-hidden"
+                      onClick={() => openImageLightbox({
+                        src: service.certification!.image,
+                        alt: 'Certificado de Capacitação',
+                        title: 'Certificado de Capacitação Profissional'
+                      })}
+                      title="Ampliar Certificado"
+                    >
+                      <img 
+                        src={service.certification.image} 
+                        alt="Certificado" 
+                        className="w-full h-full object-cover filter contrast-125 group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ZoomIn size={12} className="text-white" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-[9px] font-bold tracking-widest text-[#BD6B3B] uppercase mb-1 block flex items-center gap-1">
+                        <Check size={10} strokeWidth={3} />
+                        Profissional Certificado
+                      </span>
+                      <p className="text-[11px] sm:text-xs font-semibold text-[#14201C] leading-snug mb-1">
+                        {service.certification.title}
+                      </p>
+                      <p className="text-[10px] text-[#595349] leading-relaxed">
+                        Habilitado pela <strong className="font-bold text-[#3A352F]">{service.certification.issuer}</strong> em {service.certification.date}.
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Bottom Notice & WhatsApp Action */}

@@ -18,6 +18,7 @@ interface CobaltoAvatarProps {
 export const CobaltoAvatar: React.FC<CobaltoAvatarProps> = ({ className = '', size = 48 }) => {
   return (
     <svg
+      role="img"
       width={size}
       height={size}
       viewBox="0 0 512 512"
@@ -355,4 +356,4 @@ export const CobaltoAvatar: React.FC<CobaltoAvatarProps> = ({ className = '', si
   );
 };
 
-export default CobaltoAvatar;
+export default React.memo(CobaltoAvatar);

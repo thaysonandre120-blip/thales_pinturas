@@ -51,7 +51,7 @@ const HeroSection: React.FC = () => {
           <div className="lg:col-span-6 relative mt-4 lg:mt-0 max-w-md mx-auto w-full lg:max-w-none">
             <div className="p-2 sm:p-2.5 bg-[#FAF8F5] border border-[#DCD3C5] shadow-lg">
               <BrushRevealHeroImage
-                colorSrc="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1200&auto=format&fit=crop"
+                colorSrc="/obras/fachada-residencial-moderna.jpg"
                 alt="Pintura residencial executada pela Thales Pinturas em Itajaí"
                 aspectClassName="aspect-[16/10] sm:aspect-[4/3] max-h-[280px] sm:max-h-[340px]"
               />
