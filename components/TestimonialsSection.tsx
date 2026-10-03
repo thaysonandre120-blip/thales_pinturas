@@ -83,25 +83,6 @@ const TestimonialsSection: React.FC = () => {
               <span>@jthales_pinturas</span>
             </div>
 
-            {/* Navigation Arrows */}
-            <div className="hidden md:flex items-center gap-1.5">
-              <button
-                onClick={() => scrollBy('left')}
-                disabled={!canScrollLeft}
-                className="w-9 h-9 border border-[#DCD3C5] bg-white hover:bg-[#1D2F29] hover:text-[#FAF8F5] hover:border-[#1D2F29] disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-[#14201C] text-[#14201C] flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Anterior"
-              >
-                <ChevronLeft size={16} />
-              </button>
-              <button
-                onClick={() => scrollBy('right')}
-                disabled={!canScrollRight}
-                className="w-9 h-9 border border-[#DCD3C5] bg-white hover:bg-[#1D2F29] hover:text-[#FAF8F5] hover:border-[#1D2F29] disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-[#14201C] text-[#14201C] flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Próximo"
-              >
-                <ChevronRight size={16} />
-              </button>
-            </div>
           </div>
         </div>
 
@@ -122,7 +103,7 @@ const TestimonialsSection: React.FC = () => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         className="flex gap-4 md:gap-5 overflow-x-auto no-scrollbar px-6 md:px-12 pb-4 select-none"
-        style={{ cursor: 'grab', scrollSnapType: 'x mandatory' }}
+        style={{ cursor: 'grab' }}
       >
         {/* Left spacer for alignment */}
         <div className="shrink-0 w-0 md:w-[calc((100vw-1280px)/2)]" />
@@ -130,7 +111,6 @@ const TestimonialsSection: React.FC = () => {
         {/* CTA card at the START */}
         <div
           className="shrink-0 w-[260px] sm:w-[280px] md:w-[300px] bg-[#1D2F29] border border-[#1D2F29] p-5 md:p-6 flex flex-col items-center justify-center text-center"
-          style={{ scrollSnapAlign: 'start' }}
         >
           <div className="w-12 h-12 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] flex items-center justify-center text-white mb-4 rounded-full">
             <InstagramIcon size={22} />
@@ -157,7 +137,6 @@ const TestimonialsSection: React.FC = () => {
           <div
             key={item.id}
             className="shrink-0 w-[260px] sm:w-[280px] md:w-[300px] bg-white border border-[#E2DDD5] p-5 md:p-6 flex flex-col justify-between relative group hover:border-[#1D2F29] transition-colors"
-            style={{ scrollSnapAlign: 'start' }}
           >
             {/* Instagram Badge */}
             <div className="flex items-center justify-between mb-4">

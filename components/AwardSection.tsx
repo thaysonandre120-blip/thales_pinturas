@@ -4,9 +4,9 @@
  */
 
 import React from 'react';
-import { Trophy, Check, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Trophy, Check, ExternalLink, ArrowUpRight, ZoomIn } from 'lucide-react';
 import { getWhatsAppLink } from '../siteConfig';
-import ThalesLogo from './ThalesLogo';
+import { openImageLightbox } from './ImageLightboxModal';
 
 const AwardSection: React.FC = () => {
   return (
@@ -41,7 +41,26 @@ const AwardSection: React.FC = () => {
                 Alto Padrão
               </div>
 
-              <ThalesLogo className="w-20 h-20 sm:w-24 sm:h-24 my-2 drop-shadow-xl" />
+              <div 
+                className="relative w-full max-w-[200px] sm:max-w-[240px] aspect-[4/3] my-3 border border-[#2D3F38] cursor-pointer group/cert overflow-hidden shadow-2xl"
+                onClick={() => openImageLightbox({
+                  src: '/obras/certificado-nr35.jpg',
+                  alt: 'Certificado NR-35 Trabalho em Altura',
+                  title: 'Capacitação Periódica NR-35'
+                })}
+              >
+                <img 
+                  src="/obras/certificado-nr35.jpg" 
+                  alt="Certificado NR-35" 
+                  className="w-full h-full object-cover filter contrast-[1.1] saturate-[0.9] opacity-90 group-hover/cert:opacity-100 group-hover/cert:scale-105 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-[#14201C]/60 opacity-0 group-hover/cert:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="px-2.5 py-1 bg-[#BD6B3B] text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
+                    <ZoomIn size={12} />
+                    <span>Ampliar</span>
+                  </span>
+                </div>
+              </div>
 
               <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FAF8F5] mt-1">
                 Thales Pinturas
@@ -49,14 +68,6 @@ const AwardSection: React.FC = () => {
               <p className="text-[11px] text-[#A2B8AC] uppercase tracking-wider mt-0.5">
                 Itajaí – Santa Catarina
               </p>
-
-              <div className="mt-4 pt-3 border-t border-[#263C34] w-full flex items-center justify-around text-[10px] text-[#DCD3C5]">
-                <span>Itajaí</span>
-                <span className="text-[#BD6B3B]">•</span>
-                <span>Praia Brava</span>
-                <span className="text-[#BD6B3B]">•</span>
-                <span>Balneário Camboriú</span>
-              </div>
             </div>
 
             {/* 3 Pillars - Ultra Compact & Comfortable */}

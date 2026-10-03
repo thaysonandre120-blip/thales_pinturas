@@ -10,7 +10,6 @@ import AwardSection from './components/AwardSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
-import WorksGallery from './components/WorksGallery';
 import TestimonialsSection from './components/TestimonialsSection';
 import SocialSection from './components/SocialSection';
 import ContactSection from './components/ContactSection';
@@ -43,9 +42,6 @@ const App: React.FC = () => {
 
         {/* Antes e Depois com Slider Arrastável */}
         <BeforeAfterSlider />
-
-        {/* Obras Realizadas (Galeria com Filtros e Lightbox em Tela Cheia) */}
-        <WorksGallery />
 
         {/* Avaliações e Depoimentos de Clientes */}
         <TestimonialsSection />
