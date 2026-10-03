@@ -10,30 +10,30 @@ import ThalesLogo from './ThalesLogo';
 
 const AwardSection: React.FC = () => {
   return (
-    <section id="reconhecimento" className="relative py-16 md:py-20 bg-[#14201C] text-[#FAF8F5] overflow-hidden">
+    <section id="reconhecimento" className="relative py-10 md:py-14 bg-[#14201C] text-[#FAF8F5] overflow-hidden">
       {/* Background Subtle Ambience */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#BD6B3B_1px,transparent_1px)] [background-size:24px_24px]" />
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#BD6B3B]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto px-6 md:px-12">
+      <div className="relative max-w-4xl mx-auto px-6 md:px-8">
         {/* Section Header - Minimalista & Direto */}
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#BD6B3B]/20 border border-[#BD6B3B]/40 text-[#BD6B3B] text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] mb-3">
             <Trophy size={13} className="text-[#BD6B3B]" />
             <span>Padrão Profissional • Litoral Catarinense</span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-[#FAF8F5] leading-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-[#FAF8F5] leading-tight">
             Excelência em Pintura & Limpeza Pós-Obra
           </h2>
 
-          <p className="mt-2.5 text-xs sm:text-sm text-[#DCD3C5] max-w-lg mx-auto leading-relaxed">
+          <p className="mt-2.5 text-[11px] sm:text-xs text-[#DCD3C5] max-w-lg mx-auto leading-relaxed">
             Entre os profissionais mais recomendados de <strong>Itajaí, Praia Brava e Balneário Camboriú</strong> para clientes que buscam acabamento cirúrgico.
           </p>
         </div>
 
         {/* Minimalist Presentation Card */}
-        <div className="bg-[#0E1513] border border-[#2D3F38] p-6 sm:p-8 md:p-10 shadow-2xl">
+        <div className="bg-[#0E1513] border border-[#2D3F38] p-5 sm:p-6 shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Visual Recognition Spotlight */}
             <div className="md:col-span-5 flex flex-col items-center text-center p-6 bg-[#16221E] border border-[#2A3F37] relative">

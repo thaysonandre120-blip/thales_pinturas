@@ -337,11 +337,11 @@ export const WORKS_DATA: WorkProject[] = [
   },
   {
     id: 'work-3',
-    title: 'Revitalização Predial com Segurança NR-35',
+    title: 'Revitalização Predial em Altura',
     category: 'Predial',
     location: 'Centro, Itajaí – SC',
     year: '2025',
-    description: 'Equipe completa com certificação NR-35 para trabalho em altura. Revitalização de fachada predial com impermeabilização elastomérica contra maresia e tratamento de trincas.',
+    description: 'Revitalização de fachada predial com equipe preparada para trabalho em altura, impermeabilização elastomérica contra maresia e tratamento de trincas.',
     image: '/obras/equipe-seguranca-nr35.jpg',
     badge: 'Predial',
   },

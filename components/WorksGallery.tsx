@@ -105,32 +105,41 @@ const WorksGallery: React.FC = () => {
               onClick={() => setSelectedProject(project)}
               className="group cursor-pointer bg-[#FAF8F5] border border-[#E2DDD5] overflow-hidden flex flex-col hover:border-[#1D2F29] transition-all"
             >
-              {/* Image Container with Vibrant Colors and Click-to-Zoom */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#EFE9DF]">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover filter saturate-[1.12] contrast-[1.05] group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
+              {/* Image Container with Letterbox and Caption */}
+              <div className="relative flex flex-col bg-black overflow-hidden group-hover:bg-[#111111] transition-colors">
+                <div className="relative aspect-[4/3] flex items-center justify-center">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="max-w-full max-h-full object-contain filter saturate-[1.12] contrast-[1.05] group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
 
-                {/* Overlaid Badges */}
-                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
-                  <span className="bg-[#1D2F29]/90 text-white text-[9px] font-bold tracking-wider uppercase px-2.5 py-0.5 shadow-sm">
-                    {project.category}
-                  </span>
-                  {project.badge && (
-                    <span className="bg-[#BD6B3B] text-white text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 shadow-sm">
-                      {project.badge}
+                  {/* Overlaid Badges */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
+                    <span className="bg-[#1D2F29]/90 text-white text-[9px] font-bold tracking-wider uppercase px-2.5 py-0.5 shadow-sm">
+                      {project.category}
                     </span>
-                  )}
-                </div>
+                    {project.badge && (
+                      <span className="bg-[#BD6B3B] text-white text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 shadow-sm">
+                        {project.badge}
+                      </span>
+                    )}
+                  </div>
 
-                {/* Zoom hover indicator */}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-3 py-1 bg-[#14201C]/90 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
-                    <ZoomIn size={13} />
-                    <span>Ampliar Imagem</span>
+                  {/* Zoom hover indicator */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                    <span className="px-3 py-1 bg-[#14201C]/90 text-white text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
+                      <ZoomIn size={13} />
+                      <span>Ampliar Imagem</span>
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Caption below image */}
+                <div className="px-4 pb-3 pt-1 text-center z-10">
+                  <span className="text-white text-[10px] font-medium tracking-wide opacity-90">
+                    {project.location}
                   </span>
                 </div>
               </div>

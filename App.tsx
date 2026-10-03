@@ -35,9 +35,6 @@ const App: React.FC = () => {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Reconhecimento & Padrão de Acabamento em Itajaí */}
-        <AwardSection />
-
         {/* Sobre o Profissional / Apresentação Técnica */}
         <AboutSection />
 
@@ -55,6 +52,9 @@ const App: React.FC = () => {
 
         {/* Faixa Acompanhe no Instagram & YouTube */}
         <SocialSection />
+
+        {/* Reconhecimento & Padrão de Acabamento em Itajaí */}
+        <AwardSection />
 
         {/* Seção de Contato Direto & WhatsApp */}
         <ContactSection />

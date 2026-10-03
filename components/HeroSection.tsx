@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import BrushRevealHeroImage from './BrushRevealHeroImage';
 
 const HeroSection: React.FC = () => {
   return (
@@ -21,7 +20,7 @@ const HeroSection: React.FC = () => {
             {/* Top Quality Badge */}
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#FAF8F5] border border-[#BD6B3B]/60 text-[#14201C] text-[10px] font-semibold tracking-wider uppercase mb-3.5 shadow-2xs">
               <span className="text-xs">⭐</span>
-              <span className="text-[#BD6B3B] font-bold">Entre os Melhores de Itajaí & Região</span>
+              <span className="text-[#BD6B3B] font-bold">Entre os 3 melhores do Brasil em 2026</span>
               <span className="text-[9px] text-[#8C7E72] pl-0.5">• Alto Padrão</span>
             </div>
 
@@ -47,18 +46,19 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Hero Visual Column - Interactive Scratch/Paintbrush Image (Cinza -> Revela cor) */}
+          {/* Hero Visual Column - Colored Image */}
           <div className="lg:col-span-6 relative mt-4 lg:mt-0 max-w-md mx-auto w-full lg:max-w-none">
             <div className="p-2 sm:p-2.5 bg-[#FAF8F5] border border-[#DCD3C5] shadow-lg">
-              <BrushRevealHeroImage
-                colorSrc="/obras/fachada-residencial-moderna.jpg"
-                alt="Pintura residencial executada pela Thales Pinturas em Itajaí"
-                aspectClassName="aspect-[16/10] sm:aspect-[4/3] max-h-[280px] sm:max-h-[340px]"
-              />
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] max-h-[280px] sm:max-h-[340px] overflow-hidden">
+                <img
+                  src="/obras/fachada-residencial-moderna.jpg"
+                  alt="Pintura residencial executada pela Thales Pinturas"
+                  className="w-full h-full object-cover filter saturate-[1.12] contrast-[1.05]"
+                />
+              </div>
 
-              <div className="mt-2 px-1 flex items-center justify-between text-[10px] text-[#7A7165]">
-                <span>Obra residencial real</span>
-                <span className="text-[#BD6B3B] font-semibold">Passe o dedo ou mouse para colorir</span>
+              <div className="mt-2 px-1 flex items-center text-[10px] text-[#7A7165]">
+                <span>Obra residencial real executada com excelência</span>
               </div>
             </div>
           </div>
