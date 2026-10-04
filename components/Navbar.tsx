@@ -28,11 +28,9 @@ const Navbar: React.FC = () => {
     { label: 'Início', href: '#inicio' },
     { label: 'Serviços', href: '#servicos' },
     { label: 'Pedras Naturais', href: '#pedras-naturais' },
-    { label: 'Obras', href: '#obras' },
     { label: 'Antes & Depois', href: '#antes-e-depois' },
     { label: 'Sobre', href: '#sobre' },
     { label: 'Avaliações', href: '#avaliacoes' },
-    { label: 'Contato', href: '#contato' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -72,7 +70,7 @@ const Navbar: React.FC = () => {
               THALES PINTURAS
             </span>
             <span className="text-[9px] font-sans tracking-[0.16em] uppercase text-[#7A7165] mt-0.5">
-              Pintura & Limpeza
+              Pintura e Limpeza
             </span>
           </div>
         </a>

@@ -7,15 +7,36 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AwardSection from './components/AwardSection';
-import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import TestimonialsSection from './components/TestimonialsSection';
 import SocialSection from './components/SocialSection';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import LateralAIAssistant from './components/LateralAIAssistant';
 import ImageLightboxModal from './components/ImageLightboxModal';
+import { useEffect, useRef } from 'react';
+
+const AboutCobaltoWaypoint: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          window.dispatchEvent(new CustomEvent('open-cobalto', {
+            detail: { query: 'Conte-me sobre a experiência e o profissionalismo do Thales Pinturas.' }
+          }));
+          if (ref.current) observer.unobserve(ref.current);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref} className="w-full h-1" />;
+};
 
 const App: React.FC = () => {
   return (
@@ -34,8 +55,8 @@ const App: React.FC = () => {
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Sobre o Profissional / Apresentação Técnica */}
-        <AboutSection />
+        {/* Sobre o Profissional / Apresentação Técnica - AGORA EXPLICADO PELO COBALTO */}
+        <AboutCobaltoWaypoint />
 
         {/* Serviços Especializados (Pintura residencial e predial, Revitalização, Limpeza pós Obra, Aplicação de pedras naturais e Serviço Personalizado) */}
         <ServicesSection />
@@ -51,9 +72,6 @@ const App: React.FC = () => {
 
         {/* Reconhecimento & Padrão de Acabamento em Itajaí */}
         <AwardSection />
-
-        {/* Seção de Contato Direto & WhatsApp */}
-        <ContactSection />
       </main>
 
       {/* 5. Rodapé Institucional */}

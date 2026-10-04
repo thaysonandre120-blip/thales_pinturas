@@ -63,10 +63,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#obras" className="hover:text-[#FAF8F5] transition-colors">Obras Realizadas</a>
-              </li>
-              <li>
-                <a href="#antes-e-depois" className="hover:text-[#FAF8F5] transition-colors">Antes & Depois</a>
+                <a href="#antes-e-depois" className="hover:text-[#FAF8F5] transition-colors">Antes e Depois</a>
               </li>
               <li>
                 <a href="#avaliacoes" className="hover:text-[#FAF8F5] transition-colors">Avaliações de Clientes</a>

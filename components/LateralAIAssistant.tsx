@@ -58,7 +58,7 @@ const SIMULATION_SURFACES = [
   },
   {
     id: 'sala-interna',
-    name: 'Interior & Corredor',
+    name: 'Interior e Corredor',
     image: '/obras/corredor-interno-acabamento.jpg',
   },
   {
@@ -753,8 +753,8 @@ export const LateralAIAssistant: React.FC = () => {
               <div className="px-3 pt-2 pb-1 bg-[#FAF8F5] border-t border-[#EAE4DB] overflow-x-auto flex items-center gap-1.5 no-scrollbar">
                 {[
                   { label: '📋 Orçamento', text: 'Gostaria de um orçamento com o Thales para o meu imóvel' },
-                  { label: '🏠 Pintura Residencial & Predial', text: 'Quais técnicas o Thales utiliza na pintura residencial e predial?' },
-                  { label: '🌊 Revitalização & Maresia', text: 'Como vocês tratam trincas e protegem contra a maresia?' },
+                  { label: '🏠 Pintura Residencial e Predial', text: 'Quais técnicas o Thales utiliza na pintura residencial e predial?' },
+                  { label: '🌊 Revitalização e Maresia', text: 'Como vocês tratam trincas e protegem contra a maresia?' },
                   { label: '✨ Limpeza pós Obra', text: 'Como funciona a limpeza pós-obra especializada?' },
                   { label: '🪨 Pedras Naturais', text: 'Como é feita a aplicação de pedras naturais nas fachadas?' },
                 ].map((chip) => (

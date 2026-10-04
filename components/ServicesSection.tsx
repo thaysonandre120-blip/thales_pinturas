@@ -19,7 +19,7 @@ const ServicesSection: React.FC = () => {
               Nossos Serviços
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-semibold text-[#14201C] tracking-tight">
-              Pintura, Revitalização, Pedras & Limpeza
+              Pintura, Revitalização, Pedras e Limpeza
             </h2>
           </div>
           <p className="mt-3 md:mt-0 text-xs sm:text-sm text-[#595349] max-w-md">

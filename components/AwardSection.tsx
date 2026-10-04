@@ -24,7 +24,7 @@ const AwardSection: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-[#FAF8F5] leading-tight">
-            Excelência em Pintura & Limpeza Pós-Obra
+            Excelência em Pintura e Limpeza Pós-Obra
           </h2>
 
           <p className="mt-2.5 text-[11px] sm:text-xs text-[#DCD3C5] max-w-lg mx-auto leading-relaxed">
@@ -93,7 +93,7 @@ const AwardSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-xs sm:text-sm font-semibold text-[#FAF8F5]">
-                      Recortes Cirúrgicos & Sem Marcas
+                      Recortes Cirúrgicos e Sem Marcas
                     </h4>
                     <p className="text-[11px] sm:text-xs text-[#A2B8AC] leading-relaxed">
                       Alisamento técnico fino e paredes uniformes mesmo sob iluminação lateral direta.

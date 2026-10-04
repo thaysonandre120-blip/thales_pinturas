@@ -77,12 +77,6 @@ const AboutSection: React.FC = () => {
             <ArrowUpRight size={14} />
           </a>
 
-          <a
-            href="#obras"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 border border-[#1D2F29] text-[#1D2F29] hover:bg-[#1D2F29] hover:text-[#FAF8F5] text-xs font-bold tracking-wider uppercase transition-all"
-          >
-            Conferir Obras Realizadas
-          </a>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ const BeforeAfterSlider: React.FC = () => {
               Transformação Real
             </span>
             <h2 className="font-serif text-3xl md:text-5xl font-semibold text-[#14201C] tracking-tight">
-              Antes & Depois
+              Antes e Depois
             </h2>
           </div>
           <p className="mt-4 md:mt-0 text-sm md:text-base text-[#595349] max-w-md">

@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   return (
@@ -26,7 +25,7 @@ const HeroSection: React.FC = () => {
 
             {/* Direct H1 Title */}
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#14201C] tracking-tight leading-tight mb-4">
-              Pintura Profissional & Limpeza Pós-Obra
+              Pintura Profissional e Limpeza Pós-Obra
             </h1>
 
             {/* Subtitle - Short & Clean */}
@@ -34,16 +33,6 @@ const HeroSection: React.FC = () => {
               Pintura residencial e predial, pedras naturais e limpeza fina. Acabamento de alto padrão, sem respingos e pronto para morar.
             </p>
 
-            {/* Action: Ver Obras */}
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="#obras"
-                className="inline-flex items-center justify-center px-6 py-3 border border-[#DCD3C5] bg-[#FAF8F5] text-[#14201C] hover:border-[#1D2F29] hover:bg-[#F4EFEA] text-[11px] font-bold tracking-widest uppercase transition-all shadow-sm"
-              >
-                <span>Ver Obras</span>
-                <ArrowRight size={14} className="ml-1.5 text-[#BD6B3B]" />
-              </a>
-            </div>
           </div>
 
           {/* Hero Visual Column - HUGE and imposing */}
@@ -51,7 +40,7 @@ const HeroSection: React.FC = () => {
             <div className="p-2 sm:p-3 bg-[#FAF8F5] border border-[#DCD3C5] shadow-xl w-full">
               <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
                 <img
-                  src="/obras/fachada-residencial-moderna.jpg"
+                  src="/obras/fachada-residencial-moderna-editada.jpg"
                   alt="Pintura residencial executada pela Thales Pinturas"
                   className="w-full h-full object-cover filter saturate-[1.12] contrast-[1.05]"
                   loading="eager"
